@@ -3,7 +3,7 @@
 To fix:
 
 Part 1
-1. Fix all subnets (public and private), VPC CIDR must not be changes and submask used for subnets can be assumed to be correct.
+1. Fix all subnets (public and private), VPC CIDR must not be changed and submask used for subnets can be assumed to be correct.
 2. Fix aws_nat_gateway resource and ensure it is fully working with the VPC.
 3. Create Resources in order to run in 3 availability zones in Ireland region 
 
