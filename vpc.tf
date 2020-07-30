@@ -1,4 +1,9 @@
 # PART 1
+#####
+# Allowed resource
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip
+#####
+
 provider "aws" {
   region = "eu-west-1"
 }

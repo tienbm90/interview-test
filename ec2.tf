@@ -1,7 +1,9 @@
 # Part 2
+#####
 # https://www.terraform.io/docs/providers/aws/r/security_group.html
 # https://www.terraform.io/docs/providers/aws/r/instance.html in order to find
 # configuration that satisfies requirements
+#####
 
 # data "aws_ami" "ubuntu" {
 #   most_recent = true
@@ -19,7 +21,7 @@
 #   owners = ["099720109477"] # Canonical
 # }
 
-# resource "aws_instance" "private_server" {
+# resource "aws_instance" "public_bastion_server" {
 #   ami           = "${data.aws_ami.ubuntu.id}"
 #   instance_type = "t2.micro"
 
