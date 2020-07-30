@@ -4,8 +4,12 @@ provider "aws" {
 }
 
 resource "aws_vpc" "default" {
-  cidr_block           = "10.10.0.0/18"
+  cidr_block           = "10.10.0.0/16"
   enable_dns_hostnames = true
+
+  tags = {
+    Name = "interview vpc"
+  }
 }
 
 resource "aws_internet_gateway" "default" {
@@ -22,14 +26,14 @@ resource "aws_egress_only_internet_gateway" "default" {
 resource "aws_subnet" "eu-west-1a-public" {
   vpc_id = "${aws_vpc.default.id}"
 
-  cidr_block        = "10.100.0.0/20"
+  cidr_block        = "10.0.0.0/24"
   availability_zone = "eu-west-1a"
 }
 
 resource "aws_subnet" "eu-west-1b-public" {
   vpc_id = "${aws_vpc.default.id}"
 
-  cidr_block        = "10.100.0.0/20"
+  cidr_block        = "10.1.0.0/24"
   availability_zone = "eu-west-1b"
 }
 
@@ -64,14 +68,14 @@ resource "aws_nat_gateway" "gw" {
 resource "aws_subnet" "eu-west-1a-private" {
   vpc_id = "${aws_vpc.default.id}"
 
-  cidr_block        = "10.10.0.0/22"
+  cidr_block        = "10.2.0.0/24"
   availability_zone = "eu-west-1a"
 }
 
 resource "aws_subnet" "eu-west-1b-private" {
   vpc_id = "${aws_vpc.default.id}"
 
-  cidr_block        = "10.100.0.0/22"
+  cidr_block        = "10.3.0.0/24"
   availability_zone = "eu-west-1b"
 }
 
