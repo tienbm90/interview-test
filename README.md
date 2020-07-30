@@ -13,3 +13,7 @@ Uncomment resources in ec2.tf
 1. Create private instance in private subnet
 2. Create bastion host to ssh into private instance
 3. Ensure that you can ssh to public instance and from there jump onto private instance.
+
+## Design
+
+![Architecture](nat-gateway-diagram.png)
